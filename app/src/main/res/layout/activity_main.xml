@@ -57,6 +57,7 @@
                 android:src="@mipmap/ic_accout" />
 
             <EditText
+                android:id="@+id/edtUser"
                 android:textColorHint="@color/colorPrimaryLight"
                 android:textColor="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
@@ -78,6 +79,7 @@
                 android:src="@mipmap/ic_pass" />
 
             <EditText
+                android:id="@+id/edtPassword"
                 android:textColorHint="@color/colorPrimaryLight"
                 android:textColor="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
@@ -88,24 +90,29 @@
         </LinearLayout>
 
         <TextView
+            android:clickable="true"
+            android:id="@+id/txtNewRegister"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/h2"
             android:text="New Register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:text="@string/Login"
+            android:textColor="@color/textColorPrimary" />
+
 
 
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:text="@string/Login"
-        android:textColor="@color/textColorPrimary" />
+
 
 
 </RelativeLayout>

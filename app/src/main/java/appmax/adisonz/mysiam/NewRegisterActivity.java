@@ -2,6 +2,7 @@ package appmax.adisonz.mysiam;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,12 +52,31 @@ public class NewRegisterActivity extends AppCompatActivity {
 
                 } else {
                     //No Space
+                    uploadValueToServer();
 
                 }
 
 
             }
         });
+    }
+
+    private void uploadValueToServer() {
+        try {
+
+            PostDataToServer postDataToServer = new PostDataToServer(NewRegisterActivity.this);
+            postDataToServer.execute(nameString,userString,passwordString, "http://androidthai.in.th/siam/addDataMaster.php");
+
+            if (Boolean.parseBoolean(postDataToServer.get())) {
+                finish();
+            } else {
+                MyAlert myAlert = new MyAlert(NewRegisterActivity.this);
+                myAlert.myDialog("Cannot Upload","Please Try Again  ");
+            }
+
+        }catch (Exception e){
+            Log.d("SiamV1", "e upload ==>" + e.toString());
+        }
     }
 
     private void back_controller() {
